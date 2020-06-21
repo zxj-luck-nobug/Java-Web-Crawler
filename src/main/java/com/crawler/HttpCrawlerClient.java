@@ -5,6 +5,7 @@ package com.crawler;
  * @since JDK 1.8
  */
 public class HttpCrawlerClient implements HttpAction {
+
     @Override
     public void doGet() {
 
