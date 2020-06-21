@@ -1,9 +1,10 @@
 package com.crawler.config;
 
 /**
+ * Http type
+ *
  * @author wencai.xu
  */
-
 public enum HttpType {
     /**
      * HTTP GET
@@ -22,6 +23,9 @@ public enum HttpType {
      */
     DELETE,
 
+    /**
+     * Http type http type
+     */
     HttpType() {
     }
 }
