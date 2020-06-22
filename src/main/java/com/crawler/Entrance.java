@@ -2,21 +2,44 @@ package com.crawler;
 
 
 
+import com.crawler.config.anno.AnnoTest;
+import com.crawler.config.anno.InjectionParam;
 import com.crawler.model.HttpHeader;
 import com.crawler.parser.PageParser;
 import com.crawler.parser.UrlParser;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Hello world!
+ *
+ * @author wencai.xu
  */
-public class Entrance
-{
+public class Entrance {
+
+    private void init(){
+        try {
+            Class t = Class.forName("com.crawler.config.anno.AnnoTest");
+            Field[] fields = t.getFields();
+            AnnoTest annoTest = new AnnoTest();
+            for(Field field : fields){
+                boolean isAnnotation = field.isAnnotationPresent(InjectionParam.class);
+                if(isAnnotation) {
+                    InjectionParam param = field.getAnnotation(InjectionParam.class);
+                    Field field1 = t.getDeclaredField(field.getName());
+                    field1.setAccessible(true);
+                    field1.set(annoTest,param.value());
+                }
+                System.out.println(annoTest.getAnno());
+            }
+        } catch (ClassNotFoundException | IllegalAccessException | NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
-     * Main
      *
      * @param args args
      * @throws IOException io exception
