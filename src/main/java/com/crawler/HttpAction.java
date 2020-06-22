@@ -15,6 +15,10 @@ public interface HttpAction {
 
     /**
      * Do get
+     *
+     * @param url     url
+     * @param headers headers
+     * @return the response
      */
     Response doGet(String url, List<HttpHeader> headers);
 
