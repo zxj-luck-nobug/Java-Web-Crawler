@@ -1,10 +1,7 @@
 package com.crawler;
 
-import com.crawler.config.ConfigFilePath;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 public class Test {
 
