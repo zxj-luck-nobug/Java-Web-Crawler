@@ -15,8 +15,9 @@ import java.util.List;
  */
 public class AppEntrance {
 
-    private void init(){}
-
+    static {
+        ApplicationBoot.init();
+    }
 
     public static void main( String[] args ) throws IOException {
         HttpCrawlerClient client = new HttpCrawlerClient();
