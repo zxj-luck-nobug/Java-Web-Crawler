@@ -25,15 +25,15 @@ public interface HttpAction {
     /**
      * Do post
      */
-    void doPost();
+    void doPost(String url, List<HttpHeader> headers);
 
     /**
      * Do delete
      */
-    void doDelete();
+    void doDelete(String url, List<HttpHeader> headers);
 
     /**
      * Do put
      */
-    void doPut();
+    void doPut(String url, List<HttpHeader> headers);
 }

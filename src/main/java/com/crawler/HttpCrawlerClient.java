@@ -8,7 +8,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.Marker;
 
 import java.io.IOException;
 import java.net.HttpRetryException;
@@ -48,17 +47,18 @@ public class HttpCrawlerClient implements HttpAction {
     }
 
     @Override
-    public void doPost() {
+    public void doPost(String url, List<HttpHeader> headers) {
 
     }
 
     @Override
-    public void doDelete() {
+    public void doDelete(String url, List<HttpHeader> headers) {
 
     }
 
     @Override
-    public void doPut() {
+    public void doPut(String url, List<HttpHeader> headers) {
 
     }
+
 }
