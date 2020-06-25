@@ -12,9 +12,8 @@ import java.util.*;
 public class PropertiesUtils {
 
     public static Map<String,String> getKeyStartWith(String prefix){
-        //结项时需要修改
         Map<String,String> paramPairs = new HashMap<>(3);
-        try(InputStream resourceAsStream = PropertiesUtils.class.getClassLoader().getResourceAsStream(ConfigFilePath.ANNO_PATH)) {
+        try(InputStream resourceAsStream = getBundleResourceAsStream()) {
             Properties properties = new Properties();
             properties.load(resourceAsStream);
             Set<String> propertyNames = properties.stringPropertyNames();
@@ -25,5 +24,10 @@ public class PropertiesUtils {
             ex.printStackTrace();
         }
         return paramPairs;
+    }
+
+    private static InputStream getBundleResourceAsStream(){
+        return PropertiesUtils.class
+                        .getClassLoader().getResourceAsStream(ConfigFilePath.ANNO_PATH);
     }
 }

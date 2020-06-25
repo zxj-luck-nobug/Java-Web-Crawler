@@ -15,6 +15,7 @@ public class EntranceTest
     @Test
     public void shouldAnswerWithTrue()
     {
+
         assertTrue( true );
     }
 }
