@@ -1,4 +1,4 @@
-package com.crawler.config;
+package com.crawler.https;
 
 /**
  * Http type

@@ -1,8 +1,9 @@
 package com.crawler.model;
 
 /**
- * Http header
- * @author Administrator
+ * 请求头部
+ *
+ * @author wencai.xu
  */
 public class HttpHeader {
 

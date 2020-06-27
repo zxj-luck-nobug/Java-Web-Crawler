@@ -2,8 +2,10 @@ package com.crawler;
 
 
 
+import com.crawler.config.boot.ApplicationBoot;
+import com.crawler.https.HttpCrawlerClient;
 import com.crawler.model.HttpHeader;
-import com.crawler.parser.CrawlerParser;
+import com.crawler.parser.IndexParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +28,9 @@ public class AppEntrance {
         header.setValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36");
         List<HttpHeader> headers = new ArrayList<>();
         headers.add(header);
-        String string = client.doGet("https://www.bilibili.com/v/cinephile/?spm_id_from=333.5.b_7072696d6172794368616e6e656c4d656e75.84", headers).body().string();
-        new CrawlerParser().parser(string);
+        String string = client.doGet("https://www.bilibili.com/", headers).body().string();
+        //抓取之前使用布隆过滤器
+        new IndexParser().parser(string);
+
     }
 }

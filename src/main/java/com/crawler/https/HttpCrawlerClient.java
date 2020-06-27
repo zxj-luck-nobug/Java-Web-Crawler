@@ -1,6 +1,5 @@
-package com.crawler;
+package com.crawler.https;
 
-import com.crawler.config.MediaTypeParam;
 import com.crawler.model.HttpHeader;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
