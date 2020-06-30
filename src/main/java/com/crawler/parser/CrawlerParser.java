@@ -2,6 +2,7 @@ package com.crawler.parser;
 
 import com.crawler.config.AttributeKeys;
 import com.crawler.config.TagStore;
+import com.crawler.config.bloom.BloomUriFilter;
 import com.crawler.config.constant.Constants;
 import com.crawler.utils.UriUtils;
 import org.jsoup.Jsoup;
@@ -20,9 +21,8 @@ public class CrawlerParser implements Parser{
     private static final int MAP_INITIAL_SIZE = 10;
 
     Document document;
-    protected List<String> urls;
-    protected Map<String,Object> attrs;
-
+    private List<String> urls;
+    private Map<String,Object> attrs;
 
     private Document getDefaultDocument(String json){
 

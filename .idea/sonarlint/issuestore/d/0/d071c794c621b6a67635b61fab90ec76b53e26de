@@ -1,0 +1,13 @@
+
+œ
+java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷½“‹ıÿÿÿÿ
+—
+java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ¹Î­
+œ
+java:S11866"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÒìŸĞıÿÿÿÿ
+G
+java:S1602",Remove useless curly braces around statement(å´ä¶şÿÿÿÿ
+`
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(ªƒ¨øÿÿÿÿ8Ø˜Ÿ§¯.
+J
+java:S1068"(Remove this unused "JSON" private field.(‚ª…Áüÿÿÿÿ8Ø˜Ÿ§¯.
