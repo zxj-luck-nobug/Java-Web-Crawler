@@ -41,13 +41,13 @@ public class CrawlerParser implements Parser{
         Element channelMenu = document.getElementById(Constants.APP);
         Elements elementsByClass = channelMenu.getElementsByClass("bili-wrapper");
         Element subNav = elementsByClass.get(0).getElementById("subnav");
-        Elements li = subNav.getElementsByTag("li");
+        Elements li = subNav.getElementsByTag(TagStore.li.name());
 
         for(int i = 0; i < li.size(); i++){
             String text = li.get(i).text();
             Element child = li.get(i).child(0);
             Attributes attributes = child.attributes();
-            String href = attributes.get("href");
+            String href = attributes.get(AttributeKeys.href.name());
             System.out.println(UriUtils.createUri(href));
         }
     }

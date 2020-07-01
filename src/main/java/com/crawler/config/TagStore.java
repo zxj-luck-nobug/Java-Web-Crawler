@@ -29,5 +29,7 @@ public enum TagStore {
 
     tr,
 
-    td
+    td,
+
+    li
 }
