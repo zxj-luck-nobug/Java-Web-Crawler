@@ -20,7 +20,7 @@ public class CrawlerParser implements Parser{
 
     private static final int MAP_INITIAL_SIZE = 10;
 
-    Document document;
+    protected Document document;
     private List<String> urls;
     private Map<String,Object> attrs;
 
@@ -29,7 +29,7 @@ public class CrawlerParser implements Parser{
         return Jsoup.parse(json);
     }
 
-    void init(String html){
+    protected void init(String html){
        document = getDefaultDocument(html);
        attrs = new HashMap<>(MAP_INITIAL_SIZE);
        urls = new LinkedList<>();

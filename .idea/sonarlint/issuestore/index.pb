@@ -53,3 +53,5 @@ d
 4src/main/java/com/crawler/utils/PropertiesUtils.java,1\1\1151e310f0c910ea370c48d2a54306de2f1417d8
 ]
 -src/main/java/com/crawler/utils/UriUtils.java,5\d\5d64746cbd8e05e702f24972c965a51fcbc538ea
+a
+1src/main/java/com/crawler/parser/VideoParser.java,7\b\7b112e6429bb99d24f5fed8cc46991bd55a09c5f
