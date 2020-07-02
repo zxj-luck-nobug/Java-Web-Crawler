@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * https://github.com/jhao104/proxy_pool)参考
@@ -34,16 +35,25 @@ public class Six6ProxyParser extends CrawlerParser {
         }
     }
 
-    public static void main(String[] args) {
+    static List<String> getSockets(String uri){
         HttpCrawlerClient client = new HttpCrawlerClient();
         String body = null;
         try {
-            body = client.doGet("http://www.66ip.cn/", null).body().string();
+            body = client.doGet(uri, null).body().string();
         } catch (IOException e) {
             logger.warn("XiCi Proxy {}",e.getMessage());
         }
         new Six6ProxyParser().parser(body);
-        ips.forEach(x-> System.out.println(x.getIp()+":"+x.getPort()));
+        return ips.stream()
+                     .map(x -> x.getIp() + ":" + x.getPort())
+                .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+        List<String> sockets = Six6ProxyParser.getSockets("http://www.66ip.cn/");
+        for(int i = 0; i < sockets.size(); i++){
+            System.out.println(sockets.get(i));
+        }
     }
 }
 
