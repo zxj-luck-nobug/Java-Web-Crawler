@@ -27,4 +27,9 @@ public class IpAddress {
     public void setPort(int port) {
         this.port = port;
     }
+
+    private static boolean isValid(){
+        System.out.println("isValid");
+        return true;
+    }
 }
