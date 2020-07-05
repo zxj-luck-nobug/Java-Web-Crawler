@@ -7,9 +7,12 @@ public class IpAddress {
 
     private int port;
 
-    public IpAddress(String ip, int port) {
+    private String position;
+
+    public IpAddress(String ip, int port, String position) {
         this.ip = ip;
         this.port = port;
+        this.position = position;
     }
 
     public String getIp() {
@@ -26,6 +29,14 @@ public class IpAddress {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     private static boolean isValid(){

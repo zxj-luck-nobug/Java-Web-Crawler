@@ -1,6 +1,9 @@
 package com.crawler.parser;
 
 
+/**
+ * @author wencai.xu
+ */
 public class VideoParser extends CrawlerParser {
     @Override
     public void parser(String html) {
