@@ -1,7 +1,5 @@
 package com.crawler.model;
 
-import lombok.Data;
-import lombok.ToString;
 
 public class IpAddress {
 
