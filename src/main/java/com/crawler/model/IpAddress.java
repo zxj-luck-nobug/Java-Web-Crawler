@@ -1,5 +1,7 @@
 package com.crawler.model;
 
+import lombok.Data;
+import lombok.ToString;
 
 public class IpAddress {
 
@@ -39,8 +41,8 @@ public class IpAddress {
         this.position = position;
     }
 
-    private static boolean isValid(){
-        System.out.println("isValid");
-        return true;
+    @Override
+    public String toString(){
+        return "[\"ip:\""+this.ip+",\"port\":"+this.port+",\"position\":"+this.position+"]";
     }
 }

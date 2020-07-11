@@ -7,10 +7,6 @@ f
 6src/main/java/com/crawler/https/HttpCrawlerClient.java,d\0\d071c794c621b6a67635b61fab90ec76b53e26de
 ]
 -src/main/java/com/crawler/https/HttpType.java,a\6\a640bea3c7e086f09e6322f2179a15ec6d412a16
-`
-0src/main/java/com/crawler/html/delete/test2.html,b\e\becea802d4858a75404e81b8d730ce52948b6be4
-_
-/src/main/java/com/crawler/html/delete/test.html,c\8\c84555cb7669b10c65f0949c9b1d268dab412446
 ]
 -src/main/java/com/crawler/cache/MapCache.java,d\3\d3cdbc68538608ef7538b50617cd58d1586889a3
 `
@@ -55,3 +51,13 @@ d
 -src/main/java/com/crawler/utils/UriUtils.java,5\d\5d64746cbd8e05e702f24972c965a51fcbc538ea
 a
 1src/main/java/com/crawler/parser/VideoParser.java,7\b\7b112e6429bb99d24f5fed8cc46991bd55a09c5f
+g
+7src/main/java/com/crawler/parser/proxy/ProxyParser.java,2\6\26dea2bcc82575cb7765f2c862f5a1b9959b553a
+e
+5src/main/java/com/crawler/parser/proxy/ProxyPool.java,e\2\e2e05276cdfe2803325d3f50360060150b1f2223
+b
+2src/main/java/com/crawler/parser/proxy/Parser.java,f\e\fedef02c8e83915cb5777b207592b185afc370b3
+n
+>src/main/java/com/crawler/utils/application-website.properties,9\d\9d2f3b6c6c0bf9766279d0ea15722e949703f5f7
+k
+;src/main/java/com/crawler/parser/proxy/Six6ProxyParser.java,6\5\65b2fbb5710050a1e11c24da94b7f7ad68b733ab
