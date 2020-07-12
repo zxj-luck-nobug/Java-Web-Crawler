@@ -7,8 +7,6 @@ f
 6src/main/java/com/crawler/https/HttpCrawlerClient.java,d\0\d071c794c621b6a67635b61fab90ec76b53e26de
 ]
 -src/main/java/com/crawler/https/HttpType.java,a\6\a640bea3c7e086f09e6322f2179a15ec6d412a16
-]
--src/main/java/com/crawler/cache/MapCache.java,d\3\d3cdbc68538608ef7538b50617cd58d1586889a3
 `
 0src/main/java/com/crawler/cache/StringCache.java,f\5\f54699589ebdff6ebd3842b89aa7061483f2898e
 ^
@@ -33,8 +31,6 @@ j
 :src/main/java/com/crawler/config/boot/ApplicationBoot.java,1\a\1ad5d25177fc97ad2bc5f9fc8955bc4a2263b355
 \
 ,src/main/java/com/crawler/parser/Parser.java,f\e\febd72feba09cb216d7ee6846152e756574c494b
-`
-0src/main/java/com/crawler/html/delete/refer.html,e\d\ed6349b566aa0ac6a8626a7857f6132b0d758b4a
 a
 1src/main/java/com/crawler/parser/IndexParser.java,d\0\d0ef2ebaaefd4f7e62fb7ef1bc4669ee5b36bcfc
 c

@@ -18,16 +18,22 @@ public interface Parser {
    static String execute(String uri, List<HttpHeader> headers){
       HttpCrawlerClient client = new HttpCrawlerClient();
       String body = null;
+      ResponseBody response = null;
       try {
-         ResponseBody response = client.doGet(uri, headers).body();
+         response = client.doGet(uri, headers).body();
          if(Objects.isNull(response)){
             return null;
          }
          body = response.string();
+         response.close();
       } catch (IOException e) {
          logger.warn("executor {} proxy {}","平台",e.getMessage());
       } catch (Exception ex){
          logger.warn("NLP {}",ex.getMessage());
+      } finally {
+         if(response != null){
+            response.close();
+         }
       }
       return body;
    }

@@ -9,10 +9,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 爬取66ip代理网站
@@ -24,12 +21,18 @@ public class Main implements Parser {
     private static final String hosts = "http://www.66ip.cn";
 
     //先实现，后封装
-    public static void main(String[] args) {
+    public List<IpAddress> getProxy() {
+        List<IpAddress> addresses = new ArrayList<>();
         pageUrls.add("http://www.66ip.cn/");//首次爬取设置host url
         while (!pageUrls.isEmpty()) {
             String currentUri = pageUrls.poll();
             System.out.println(currentUri);
-            Document document = Jsoup.parse(Parser.execute(currentUri, null));
+            String execute = Parser.execute(currentUri, null);
+            if(StringUtils.isEmpty(execute)){
+                continue;
+            }
+            Document document = Jsoup.parse(execute);
+
             Elements tablesElements = document.select("div[id=main]").select(TagStore.table.name());
             if(!tablesElements.isEmpty()){
                 Element table = tablesElements.get(0);
@@ -38,7 +41,7 @@ public class Main implements Parser {
                 if (!trs.isEmpty()) {
                     for (int n = 1; n < trs.size(); n++) {
                         Elements tds = trs.get(n).getElementsByTag(TagStore.td.name());
-                        System.out.println(new IpAddress(tds.get(0).text(), Integer.parseInt(tds.get(1).text()), tds.get(2).text(),1,true,true,"").toString());
+                        addresses.add(new IpAddress(tds.get(0).text(), Integer.parseInt(tds.get(1).text()), tds.get(2).text(),1,true,true,""));
                     }
                 }
                 Elements as = document.select("div[id=PageList]").select("a");
@@ -52,13 +55,8 @@ public class Main implements Parser {
                     }
                 }
             }
-
         }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        return addresses;
     }
 
     @Override

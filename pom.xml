@@ -6,11 +6,8 @@
 
   <groupId>com.crawler</groupId>
   <artifactId>Java-Web-Crawler</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>ip-proxy-pools</module>
-  </modules>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
   <name>Java-Web-Crawler</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -59,8 +56,12 @@
       <artifactId>lombok</artifactId>
       <version>1.18.12</version>
       <scope>provided</scope>
+    </dependency><!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>3.1.0</version>
     </dependency>
-
 
   </dependencies>
 
