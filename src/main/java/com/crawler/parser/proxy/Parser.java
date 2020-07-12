@@ -3,11 +3,13 @@ package com.crawler.parser.proxy;
 
 import com.crawler.https.HttpCrawlerClient;
 import com.crawler.model.HttpHeader;
+import okhttp3.ResponseBody;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public interface Parser {
 
@@ -17,9 +19,15 @@ public interface Parser {
       HttpCrawlerClient client = new HttpCrawlerClient();
       String body = null;
       try {
-         body = client.doGet(uri, headers).body().string();
+         ResponseBody response = client.doGet(uri, headers).body();
+         if(Objects.isNull(response)){
+            return null;
+         }
+         body = response.string();
       } catch (IOException e) {
          logger.warn("executor {} proxy {}","平台",e.getMessage());
+      } catch (Exception ex){
+         logger.warn("NLP {}",ex.getMessage());
       }
       return body;
    }

@@ -14,6 +14,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
+/**
+ * 爬取66ip代理网站
+ */
 public class Main implements Parser {
     //创建队列暂存页面接口
     private static Queue<String> pageUrls = new LinkedList<>();
@@ -22,7 +25,7 @@ public class Main implements Parser {
 
     //先实现，后封装
     public static void main(String[] args) {
-        pageUrls.add("http://www.66ip.cn/");
+        pageUrls.add("http://www.66ip.cn/");//首次爬取设置host url
         while (!pageUrls.isEmpty()) {
             String currentUri = pageUrls.poll();
             System.out.println(currentUri);
@@ -35,7 +38,7 @@ public class Main implements Parser {
                 if (!trs.isEmpty()) {
                     for (int n = 1; n < trs.size(); n++) {
                         Elements tds = trs.get(n).getElementsByTag(TagStore.td.name());
-                        System.out.println(new IpAddress(tds.get(0).text(), Integer.parseInt(tds.get(1).text()), tds.get(2).text()).toString());
+                        System.out.println(new IpAddress(tds.get(0).text(), Integer.parseInt(tds.get(1).text()), tds.get(2).text(),1,true,true,"").toString());
                     }
                 }
                 Elements as = document.select("div[id=PageList]").select("a");

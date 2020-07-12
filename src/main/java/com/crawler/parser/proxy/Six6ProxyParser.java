@@ -5,7 +5,6 @@ import com.crawler.config.TagStore;
 import com.crawler.https.HttpCrawlerClient;
 import com.crawler.model.AreaAddress;
 import com.crawler.model.IpAddress;
-import com.crawler.parser.CrawlerParser;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -41,7 +40,7 @@ public class Six6ProxyParser extends ProxyParser implements Parser {
 
         for(int n = 1; n < trs.size(); n++){
             Elements tds = trs.get(n).getElementsByTag(TagStore.td.name());
-            ips.add(new IpAddress(tds.get(0).text(),Integer.parseInt(tds.get(1).text()),tds.get(2).text()));
+            ips.add(new IpAddress(tds.get(0).text(),Integer.parseInt(tds.get(1).text()),tds.get(2).text(),1,true,false,""));
         }
         ips.forEach(System.out::println);
     }
