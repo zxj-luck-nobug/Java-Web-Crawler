@@ -1,6 +1,7 @@
 package com.crawler.utils;
 
 import com.crawler.config.Configuration;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +29,9 @@ public class PropertiesUtils {
             properties.load(resourceAsStream);
             Set<String> propertyNames = properties.stringPropertyNames();
             for(String name : propertyNames){
-                paramPairs.put(name,properties.getProperty(name));
+                if(StringUtils.isNotEmpty(name) && name.startsWith(prefix)){
+                    paramPairs.put(name,properties.getProperty(name));
+                }
             }
         } catch (IOException ex) {
             if(LOGGER.isWarnEnabled()){

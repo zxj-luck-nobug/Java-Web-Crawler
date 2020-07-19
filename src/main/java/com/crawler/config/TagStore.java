@@ -23,5 +23,15 @@ public enum TagStore {
     /**
      * a
      */
-    p;
+    p,
+
+    table,
+
+    tr,
+
+    td,
+
+    li,
+
+    tbody
 }

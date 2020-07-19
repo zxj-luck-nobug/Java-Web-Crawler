@@ -6,6 +6,6 @@ package com.crawler.config.bloom;
  *
  * @author wencai.xu
  */
-public interface Filter {
-    boolean filter();
+public interface Filter<T> {
+    boolean filter(T url);
 }

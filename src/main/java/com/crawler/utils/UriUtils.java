@@ -65,10 +65,6 @@ public class UriUtils {
         return isChannel;
     }
 
-    public static void main(String[] args) {
-        System.out.println(UriUtils.hasChannel("https://www.bilibili.com/v/dance/hiphop/"));
-    }
-
     private static String composerUri(String prefix, String url){
         return
                 new StringBuilder(utils.getValueBy(prefix))

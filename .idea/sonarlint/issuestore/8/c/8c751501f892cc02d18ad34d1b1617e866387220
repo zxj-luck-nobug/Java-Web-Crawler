@@ -1,0 +1,13 @@
+
+a
+java:S1128"DRemove this unused import 'com.crawler.config.bloom.BloomUriFilter'.(¬ø¢Ÿ8‚±Á­°.
+K
+java:S1481/")Remove this unused "text" local variable.(ÿ¹“‰ıÿÿÿÿ8‡ƒª¯.
+v
+java:S1450"TRemove the "attrs" field and declare it as a local variable in the relevant methods.(ºİ´‚ùÿÿÿÿ8˜‹Á­°.
+D
+java:S1068"(Remove this unused "urls" private field.(Ó¤ÔG8„ãÀ­°.
+K
+java:S1068")Remove this unused "attrs" private field.(ºİ´‚ùÿÿÿÿ8˜‹Á­°.
+o
+java:S1450"SRemove the "urls" field and declare it as a local variable in the relevant methods.(Ó¤ÔG8„ãÀ­°.
