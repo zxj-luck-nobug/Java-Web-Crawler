@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
+import java.util.function.Supplier;
 
 /**
  * @author wencai.xu
@@ -30,7 +31,9 @@ public class PropertiesUtils {
                 paramPairs.put(name,properties.getProperty(name));
             }
         } catch (IOException ex) {
-            LOGGER.warn("{} IO exception {}","Properties Utils",ex.getMessage());
+            if(LOGGER.isWarnEnabled()){
+                LOGGER.warn("{} IO exception {}","Properties Utils",ex.getMessage());
+            }
         }
         return paramPairs;
     }
@@ -41,7 +44,9 @@ public class PropertiesUtils {
             properties.load(resourceAsStream);
             return properties.getProperty(key);
         } catch (IOException e) {
-            LOGGER.warn("{} IO exception {}","Properties Utils",e.getMessage());
+            if(LOGGER.isWarnEnabled()){
+                LOGGER.warn("{} IO exception {}","Properties Utils",e.getMessage());
+            }
         }
         return null;
     }

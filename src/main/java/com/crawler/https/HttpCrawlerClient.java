@@ -40,7 +40,9 @@ public class HttpCrawlerClient implements HttpAction {
             }
             return response;
         } catch (IOException e) {
-            LOGGER.warn("IO");
+            if(LOGGER.isWarnEnabled()){
+                LOGGER.warn("IO");
+            }
         }
         return null;
     }
